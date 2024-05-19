@@ -1,0 +1,107 @@
+.root {
+    -fx-background-color: #fff; /* Cor de fundo */
+}
+
+#lateralBar {
+    -fx-background-color: #9BA4B5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+
+}
+
+#UserButton {
+    -fx-background-color: #c4cbda; /* Cor de fundo dos buttons */
+    -fx-text-fill: black; /* Cor do texto dos buttons */
+    -fx-padding: 10px; /* Espaçamento interno dos buttons */
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#AdminButton {
+    -fx-background-color: #c4cbda; /* Cor de fundo dos buttons */
+    -fx-text-fill: black; /* Cor do texto dos buttons */
+    -fx-padding: 10px; /* Espaçamento interno dos buttons */
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+
+}
+
+#UserButton:hover {
+    -fx-background-color: CAD3E5;
+}
+
+#AdminButton:hover {
+    -fx-background-color: CAD3E5;
+}
+ /*-----------------------------------------------------------------*/
+#TextTop {
+    -fx-font-size: 30px;
+    -fx-font-weight: Bold;
+}
+
+#gridPane {
+    -fx-background-color: #DDE6ED;
+    -fx-background-radius: 30px; /* Arredondamento dos cantos do fundo dos buttons */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+}
+
+#banco {
+    -fx-font-size: 30px;
+}
+
+.label {
+    -fx-font-size: 20px;
+}
+
+#saveButton {
+    -fx-background-color: #212A3E;
+    -fx-border-radius: 45px ;
+    -fx-background-radius: 45px;
+    -fx-text-fill: white;
+    -fx-min-Width: 180px;
+    -fx-min-height: 45px;
+}
+
+#saveButton:hover {
+    -fx-background-color: #878b94
+}
+
+#editButton {
+    -fx-background-color: #212A3E;
+    -fx-border-radius: 45px ;
+    -fx-background-radius: 45px;
+    -fx-text-fill: white;
+    -fx-min-Width: 180px;
+}
+
+#menuButton {
+    -fx-background-color: #fff;
+    -fx-border-radius: 5px;
+    -fx-padding: 2px;
+    -fx-background-radius: 10px;
+    
+}
+
+/* #Column {
+    -fx-background-color: #DDE6ED;
+} */
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+}
+
+.table-view .table-cell{
+    -fx-font-size: 13px;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #DDE6ED;
+    -fx-background-insets: 0, 0.1 1 0.2 ;
+    -fx-padding: 0.0em; /* 0 */
+    
+}
+

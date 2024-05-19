@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+.root {
+    -fx-background-color: #fff; /* Cor de fundo */
+}
+
+#lateralBar {
+    -fx-background-color: #9BA4B5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+
+}
+
+#UserButton {
+    -fx-background-color: #c4cbda; /* Cor de fundo dos buttons */
+    -fx-text-fill: black; /* Cor do texto dos buttons */
+    -fx-padding: 10px; /* Espaçamento interno dos buttons */
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#AdminButton {
+    -fx-background-color: #c4cbda; /* Cor de fundo dos buttons */
+    -fx-text-fill: black; /* Cor do texto dos buttons */
+    -fx-padding: 10px; /* Espaçamento interno dos buttons */
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#UserButton:hover {
+    -fx-background-color: CAD3E5;
+}
+
+
+#AdminButton:hover {
+    -fx-background-color: CAD3E5;
+}
+/*-----------------------------------------------------------------*/
+.label {
+    -fx-font-size: 25px;
+}
