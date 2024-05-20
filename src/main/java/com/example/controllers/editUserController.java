@@ -6,14 +6,16 @@ import com.example.App;
 import com.example.controllers.Database.DatabaseConnection;
 import com.example.model.userDisplay;
 
-import javafx.application.Platform;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseEvent;
+
+import javafx.util.Callback;
 
 @SuppressWarnings("rawtypes")
 public class editUserController {
@@ -59,6 +61,8 @@ public class editUserController {
     @FXML
     private void initialize() {
         loadTableData();  
+
+
     }
     
     @FXML
@@ -72,33 +76,69 @@ public class editUserController {
     }
 
     
+    DatabaseConnection dbAccess = new DatabaseConnection();
+    ObservableList<userDisplay> data = dbAccess.fillTableUsers();
+
     @FXML 
     private void handleCheckOnClick() throws IOException{
-
+        // userDisplay Selected = editUserTable.getSelectionModel().getSelectedItem();
+        // if (Selected != null) {
+        //     Selected.setSelected(true);
+        //     editUserTable.refresh();
+        // }
     }
-
+    
     @SuppressWarnings("unchecked")
     private void loadTableData() {
-        DatabaseConnection dbAccess = new DatabaseConnection();
-        ObservableList<userDisplay> data = dbAccess.fillTableUsers();
+        // DatabaseConnection dbAccess = new DatabaseConnection();
+        // ObservableList<userDisplay> data = dbAccess.fillTableUsers();
 
-        editUserTable.setItems(data);
-        
-        checkBoxColumn.setCellValueFactory(new PropertyValueFactory<>("selected"));
-        checkBoxColumn.setCellFactory(column -> {
+   
+    
+        checkBoxColumn.setCellFactory(CheckBoxTableCell.forTableColumn(checkBoxColumn));
+        checkBoxColumn.setCellFactory(tc -> {
             CheckBoxTableCell<userDisplay, Boolean> cell = new CheckBoxTableCell<>();
-            cell.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> event.consume());
-            return cell;
+            cell.setOnMouseClicked(e -> {
+                if (! cell.isEmpty()) {
+                    userDisplay item = (userDisplay) cell.getTableRow().getItem();
+                    item.setSelected(!item.isSelected());
+                    editUserTable.refresh();
+                }
+            });
+            return cell ;
         });
+        
+        
+        
 
-        checkBoxColumn.setCellValueFactory(cellData -> cellData.getValue().selectedProperty());
+        // Define o valor da célula
+        checkBoxColumn.setCellValueFactory(new Callback<CellDataFeatures<userDisplay, Boolean>, ObservableValue<Boolean>>() {
+            @Override
+            public ObservableValue<Boolean> call(CellDataFeatures<userDisplay, Boolean> param) {
+                userDisplay userDisplay = param.getValue();
+        
 
-        editUserTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
-            if (newSelection != null) {
-                Platform.runLater(() -> editUserTable.getSelectionModel().clearSelection());
+                return userDisplay.selectedProperty();
             }
         });
-        
+
+
+        // checkBoxColumn.setCellValueFactory(new PropertyValueFactory<>("selected"));
+        // checkBoxColumn.setCellFactory(column -> {
+        //     CheckBoxTableCell<userDisplay, Boolean> cell = new CheckBoxTableCell<>();
+        //     cell.addEventFilter(MouseEvent.MOUSE_CLICKED, event -> event.consume());
+        //     return cell;
+        // });
+
+        // checkBoxColumn.setCellValueFactory(cellData -> cellData.getValue().selectedProperty());
+
+        // editUserTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+        //     if (newSelection != null) {
+        //         Platform.runLater(() -> editUserTable.getSelectionModel().clearSelection());
+        //     }
+        // });
+        editUserTable.setItems(data);
+
 
         userColumn.setCellValueFactory(new PropertyValueFactory<>("usuario"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));

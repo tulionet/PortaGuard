@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class App extends Application {
 
-    private static String pages = "login/login"; // Variável global
+    private static String pages = "login/login"; 
 
     public static String getLogin() {
         return pages = "login/login";

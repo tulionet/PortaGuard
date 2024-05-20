@@ -56,6 +56,7 @@ public class cadastroController {
     @FXML
     private void initialize() {
         menuButton.getItems().addAll(accesType.values());
+        menuButton.setValue(accesType.NORMAL_USER);
     }
 
     @FXML
@@ -67,8 +68,9 @@ public class cadastroController {
         int type = menuButton.getValue().getType();
         User param = new User();
         DatabaseConnection conn = new DatabaseConnection();
-        param.loginParameters(nameField, passwordField, userField, confirmPassField, password, confirmPass, menuButton);
-            if (conn.userRegister(name, user, password, type)) {
+
+            if (param.loginParameters(nameField, passwordField, userField, confirmPassField, password, confirmPass, menuButton)) {
+                conn.userRegister(name, user, password, type);
                 new Alerts().showAlertConfirmation("Usuário cadastrado com sucesso!");
 
                 nameField.clear();

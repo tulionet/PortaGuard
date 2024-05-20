@@ -1,22 +1,28 @@
 package com.example.model;
 
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 
 public class userDisplay {
-    private StringProperty usuario;
-    private StringProperty nome;
-    private StringProperty role;
-    private BooleanProperty selected;
+    private SimpleStringProperty usuario;
+    private SimpleStringProperty nome;
+    private SimpleStringProperty role;
+    private SimpleBooleanProperty selected;
 
-    public void UserDisplay(String nome, String usuario, String role, Boolean selected) {
+    public userDisplay(String nome, String usuario, String role, Boolean selected) {
         this.usuario = new SimpleStringProperty(usuario);
         this.nome = new SimpleStringProperty(nome);
         this.role = new SimpleStringProperty(role);
         this.selected = new SimpleBooleanProperty(false);
     }
+    
+
+    // public void UserDisplay(String nome, String usuario, String role, Boolean selected) {
+    //     this.usuario = new SimpleStringProperty(usuario);
+    //     this.nome = new SimpleStringProperty(nome);
+    //     this.role = new SimpleStringProperty(role);
+    //     this.selected = new SimpleBooleanProperty(false);
+    // }
 
     public String getUsuario() {
         return usuario.get();
@@ -38,7 +44,7 @@ public class userDisplay {
         return role.get();
     }
 
-    public BooleanProperty selectedProperty() {
+    public SimpleBooleanProperty selectedProperty() {
         return selected;
     }
 

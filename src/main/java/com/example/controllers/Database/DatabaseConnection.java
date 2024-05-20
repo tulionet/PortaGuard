@@ -37,7 +37,7 @@ public class DatabaseConnection {
                 String nome = rs.getString("Nome");
                 String usuario = rs.getString("Usuario");
                 
-                int tipo = rs.getInt("tipo");
+                int tipo = rs.getInt("Tipo");
                 String role = null; 
                 accesType[] values = accesType.values();
                 accesType perm = null;
@@ -53,8 +53,7 @@ public class DatabaseConnection {
                             role = nextType.name();
                         }
             
-                userDisplay user = new userDisplay();
-                user.UserDisplay(nome, usuario, role, false);
+                userDisplay user = new userDisplay(nome, usuario, role, false);
                 
                 // userDisplay UserDisplay = new userDisplay();
                 // for (int i = 1; i <= columnsNumber; i++) {
@@ -126,6 +125,7 @@ public class DatabaseConnection {
     
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("erro");
             return false;
         }
     }

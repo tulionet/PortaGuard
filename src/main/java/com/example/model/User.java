@@ -38,14 +38,15 @@ public class User {
     public boolean loginParameters(TextField nameField, PasswordField passwordField, TextField userField, PasswordField confirmPassField, String password, String confirmPass, @SuppressWarnings("rawtypes") ComboBox menuButton) {
         if (nameField.getText().trim().isEmpty() || userField.getText().trim().isEmpty() || passwordField.getText().trim().isEmpty() || confirmPassField.getText().trim().isEmpty() || (menuButton.getValue() == null)) {
             new Alerts().showAlertWarning("Todos os campos devem ser preenchidos.");
+            return false;
         } else if (!isValidPassword(password)) {
             new Alerts().showAlertWarning("A senha deve conter pelo menos 6 caracteres, incluindo maiúsculas, minúsculas e números.");
+            return false;
         } else if (!password.equals(confirmPass)) {
             new Alerts().showAlertWarning("As senhas não coincidem.");
-        } else {
-            new Alerts().showAlertError("Falha ao cadastrar o usuário.");
-        }
-        return false;
+            return false;
+        } else
+        return true;
     }
 
     private boolean isValidPassword(String pass) {
