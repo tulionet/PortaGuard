@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+.root {
+    -fx-background-color: #fff; /* Cor de fundo */
+}
+
+#lateralBar {
+    -fx-background-color: #9BA4B5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+
+}
+
+#Button {
+    -fx-background-color: #c4cbda;
+    -fx-text-fill: black; 
+    -fx-padding: 10px; 
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#Button:hover {
+    -fx-background-color: #CAD3E5;
+}
+
+#LateralButton {
+    -fx-background-color: #c4cbda; /* Cor de fundo dos buttons */
+    -fx-text-fill: black; /* Cor do texto dos buttons */
+    -fx-padding: 10px; /* Espaçamento interno dos buttons */
+    /* -fx-font-weight: Bold; */
+    -fx-font-size: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#LateralButton:hover {
+    -fx-background-color: #CAD3E5;
+}
+/*-----------------------------------------------------------------*/

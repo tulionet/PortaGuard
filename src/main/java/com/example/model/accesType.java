@@ -1,8 +1,9 @@
 package com.example.model;
 
 public enum accesType {
-    NORMAL_USER(1), 
-    ADMINISTRATOR(2);
+    ADMINISTRATOR(1),
+    NORMAL_USER(2);
+
 
     private final int value;
 
@@ -13,4 +14,6 @@ public enum accesType {
     public int getType() {
         return value;
     }
+
+
 }

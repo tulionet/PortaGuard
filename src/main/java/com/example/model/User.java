@@ -1,20 +1,19 @@
 package com.example.model;
 
-import java.util.regex.Pattern;
-
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-
 public class User {
 
-    public String Name;
-    public String username;
+    private String Name;
+    private  String username;
     protected String Password;
-    public accesType role;
+    private accesType role;
+    private int id;
 
     public String getName() {
         return Name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public accesType getRole() {
@@ -29,33 +28,13 @@ public class User {
 
     }
 
-    public User(String Name, String Password, accesType role) {
+    public User(int id, String Name, String username, String Password, accesType role) {
+        this.id = id;
         this.Name = Name;
         this.Password = Password;
         this.role = role;
+        this.username = username;
     }
-
-    public boolean loginParameters(TextField nameField, PasswordField passwordField, TextField userField, PasswordField confirmPassField, String password, String confirmPass, @SuppressWarnings("rawtypes") ComboBox menuButton) {
-        if (nameField.getText().trim().isEmpty() || userField.getText().trim().isEmpty() || passwordField.getText().trim().isEmpty() || confirmPassField.getText().trim().isEmpty() || (menuButton.getValue() == null)) {
-            new Alerts().showAlertWarning("Todos os campos devem ser preenchidos.");
-            return false;
-        } else if (!isValidPassword(password)) {
-            new Alerts().showAlertWarning("A senha deve conter pelo menos 6 caracteres, incluindo maiúsculas, minúsculas e números.");
-            return false;
-        } else if (!password.equals(confirmPass)) {
-            new Alerts().showAlertWarning("As senhas não coincidem.");
-            return false;
-        } else
-        return true;
-    }
-
-    private boolean isValidPassword(String pass) {
-        return pass.length() >= 6 && Pattern.compile("[a-z]").matcher(pass).find()
-                && Pattern.compile("[A-Z]").matcher(pass).find()
-                && Pattern.compile("[0-9]").matcher(pass).find();
-    }
-
-
 }
 
 

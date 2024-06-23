@@ -8,21 +8,24 @@ public class userDisplay {
     private SimpleStringProperty nome;
     private SimpleStringProperty role;
     private SimpleBooleanProperty selected;
+    private SimpleStringProperty isEnable;
 
-    public userDisplay(String nome, String usuario, String role, Boolean selected) {
+
+    public userDisplay(String nome, String usuario, String role, Boolean selected, String isEnable) {
         this.usuario = new SimpleStringProperty(usuario);
         this.nome = new SimpleStringProperty(nome);
         this.role = new SimpleStringProperty(role);
         this.selected = new SimpleBooleanProperty(false);
+        this.isEnable = new SimpleStringProperty(isEnable);
     }
-    
 
-    // public void UserDisplay(String nome, String usuario, String role, Boolean selected) {
-    //     this.usuario = new SimpleStringProperty(usuario);
-    //     this.nome = new SimpleStringProperty(nome);
-    //     this.role = new SimpleStringProperty(role);
-    //     this.selected = new SimpleBooleanProperty(false);
-    // }
+    public String getIsEnable() {
+        return isEnable.get();
+    }
+
+    public void setIsEnable(String isEnable) {
+        this.isEnable.set(isEnable);
+    }
 
     public String getUsuario() {
         return usuario.get();

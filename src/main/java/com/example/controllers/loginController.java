@@ -3,7 +3,7 @@ package com.example.controllers;
 import java.io.IOException;
 
 import com.example.model.Alerts;
-import com.example.App;
+import com.example.model.Pages;
 import com.example.controllers.Database.DatabaseConnection;
 
 import javafx.fxml.FXML;
@@ -24,13 +24,13 @@ public class loginController {
     private void handleLoginButtonAction() throws IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
+        
         DatabaseConnection db = new DatabaseConnection();
-
-        boolean isAuthenticated = db.auth(username, password);
-        if (isAuthenticated) {
-            App.setRoot(App.getMain());
+        if (db.auth(username, password)) { // autentica o usuário
+            new Pages().getMain(); // redirecionamento para a tela principal
         } else {
-            new Alerts().showAlertError("Falha na autenticação. Verifique suas credenciais.");
+            new Alerts().showAlertError("Falha na autenticação. Verifique suas credenciais.", null);
         }
     }
+
 }

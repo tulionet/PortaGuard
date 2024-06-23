@@ -1,0 +1,62 @@
+.dialog-pane {
+    -fx-background-color: #DDE6ED;
+
+}
+
+.button.editar {
+    -fx-background-color: #212A3E;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-font-size: 15px;
+
+}
+
+.button.editar:hover {
+    -fx-background-color: #878b94;
+}
+
+
+
+.button.cancelar {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #212A3E;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-font-size: 15px;
+
+}
+
+.button.cancelar:hover {
+    -fx-background-color: #878b94;
+    -fx-text-fill: #FFFFFF;
+}
+
+.roleBox {
+    -fx-background-color: #fff;
+    -fx-border-radius: 5px;
+
+    -fx-background-radius: 10px;
+    -fx-font-size: 15px;
+
+}
+
+.txtField {
+    -fx-font-size: 15px;
+    -fx-border-radius: 5px;
+
+    -fx-background-radius: 10px;
+
+}
+
+.bt {
+    -fx-background-color: #212A3E;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-font-size: 15px;
+}
+
+.bt:hover {
+    -fx-background-color: #878b94;
+}

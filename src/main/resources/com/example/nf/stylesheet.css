@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
+.root {
+    -fx-background-color: #fff; /* Cor de fundo */
+}
+
+#lateralBar {
+    -fx-background-color: #9BA4B5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 3, 0, 2, 2 );
+
+}
+
+#Button {
+    -fx-background-color: #c4cbda;
+    -fx-text-fill: black; 
+    -fx-padding: 10px; 
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#Button:hover {
+    -fx-background-color: #CAD3E5;
+}
+
+#LateralButton {
+    -fx-background-color: #c4cbda; /* Cor de fundo dos buttons */
+    -fx-text-fill: black; /* Cor do texto dos buttons */
+    -fx-padding: 10px; /* Espaçamento interno dos buttons */
+    /* -fx-font-weight: Bold; */
+    -fx-font-size: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 1);
+}
+
+#LateralButton:hover {
+    -fx-background-color: #CAD3E5;
+}
+
+
+/*-----------------------------------------------------------------*/
+
+#saveButton {
+    -fx-background-color: #212A3E;
+    -fx-border-radius: 45px ;
+    -fx-background-radius: 45px;
+    -fx-text-fill: white;
+    -fx-min-Width: 180px;
+    -fx-min-height: 45px;
+    -fx-font-weight: Bold;
+    -fx-font-size: 20px;
+}
+
+#saveButton:hover {
+    -fx-background-color: #878b94
+}
+
+#gridPane {
+    -fx-background-color: #DDE6ED;
+    -fx-background-radius: 30px; /* Arredondamento dos cantos do fundo dos buttons */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 5, 0, 0, 2);
+}
+
+#TextTop {
+    -fx-font-size: 30px;
+    -fx-font-weight: Bold;
+}
+
+#checkLabels {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 3px;
+    -fx-font-size: 20px;
+}
+
+#checkBox {
+    -fx-font-size: 14px;
+}
+
+#txtField {
+    -fx-font-size: 18px;
+}
+
+#banco {
+    -fx-font-size: 30px;
+}
+
+#saveButton {
+    -fx-background-color: #212A3E;
+    -fx-border-radius: 45px ;
+    -fx-background-radius: 45px;
+    -fx-text-fill: white;
+    -fx-min-Width: 180px;
+    -fx-min-height: 45px;
+}
+
+#saveButton:hover {
+    -fx-background-color: #878b94
+}
+
+#tableButton {
+    -fx-background-color: #212A3E;
+    -fx-border-radius: 45px ;
+    -fx-background-radius: 45px;
+    -fx-text-fill: white;
+    -fx-min-Width: 180px;
+    -fx-font-size: 15px;
+}
+
+#tableButton:hover {
+    -fx-background-color: #878b94
+}
+
+#menuButton {
+    -fx-background-color: #fff;
+    -fx-border-radius: 5px;
+    -fx-padding: 2px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 15px;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: #DDE6ED;
+    -fx-text-fill: black;
+}
+
+.table-view .column-header {
+    -fx-background-color: #DDE6ED;
+}
+
+.table-view .table-cell{
+    -fx-font-size: 16px;
+
+}
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #DDE6ED;
+}
+
+
+.table-row-cell:focused .table-cell{
+    -fx-text-fill: gray;
+    -fx-background-color: #d9e0e6;
+
+}
+
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: #d9e0e6;
+}
+
+.table-view .filler {
+    -fx-background-color: #d9e0e6;
+}
